@@ -3,10 +3,18 @@ import java.math.BigInteger
 import java.security.MessageDigest
 
 /**
- * Reads lines from the given input txt file.
+ * Reads lines from the given input file.
  */
-fun readInput(name: String) = File("src", "$name.txt")
+fun readInput(pckg: String, name: String) = File("src/$pckg/resources", name)
     .readLines()
+
+/**
+ * Reads lines from the given input file.
+ */
+fun readInputAsInts(pckg: String, name: String) = File("src/$pckg/resources", name)
+    .readLines()
+    .map{ it.toInt() }
+
 
 /**
  * Converts string to md5 hash.
