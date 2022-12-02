@@ -5,13 +5,13 @@ import java.security.MessageDigest
 /**
  * Reads lines from the given input file.
  */
-fun readInput(pckg: String, name: String) = File("src/$pckg/resources", name)
+fun readInput(name: String) = File("resources", name)
     .readLines()
 
 /**
  * Reads lines from the given input file.
  */
-fun readInputAsInts(pckg: String, name: String) = File("src/$pckg/resources", name)
+fun readInputAsInts(name: String) = File("resources", name)
     .readLines()
     .map{ it.toInt() }
 
