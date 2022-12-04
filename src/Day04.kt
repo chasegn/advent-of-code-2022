@@ -12,7 +12,7 @@ class Day04 : Day {
      * Accepted solution: 644
      */
     override fun part1(input: List<String>): Int {
-        var count = 0;
+        var count = 0
 
         for (assignment in input) {
             val ranges = makeRanges(assignment)
@@ -30,7 +30,7 @@ class Day04 : Day {
      * Accepted solution: 926
      */
     override fun part2(input: List<String>): Int {
-        var count = 0;
+        var count = 0
 
         for (assignment in input) {
             val ranges = makeRanges(assignment)
