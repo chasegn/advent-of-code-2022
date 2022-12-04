@@ -1,3 +1,8 @@
+
+/**
+ * Day 04 for Advent of Code 2022
+ * https://adventofcode.com/2022/day/4
+ */
 class Day04 : Day {
     override val inputFileName: String = "Day04"
     override val test1Expected: Int = 2
