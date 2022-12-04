@@ -16,10 +16,10 @@ interface Day {
             val test1Result = part1(testInput)
             check(test1Result == test1Expected) {
                 """
-    part 1 test failed
-    Expected:  $test1Expected
-    Actual:    $test1Result
-                """
+                    part 1 test failed
+                    Expected:  $test1Expected
+                    Actual:    $test1Result
+                """.trimIndent()
             }
         }
 
@@ -28,8 +28,8 @@ interface Day {
             check(test2Result == test2Expected) {
                 """
                     part 2 test failed
-                    Expected:\t$test2Expected
-                    Actual:\t$test2Result
+                    Expected: $test2Expected
+                    Actual:   $test2Result
                 """.trimIndent()
             }
         }
