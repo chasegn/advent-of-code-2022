@@ -20,13 +20,9 @@ fun main() {
         var sum = 0
 
         input.windowed(3, 3) {
-            val one = it[0]
-            val two = it[1]
-            val three = it[2]
-
             run run@ {
-                one.toCharArray().forEach { c ->
-                    if (two.indexOf(c) != -1 && three.indexOf(c) != -1) {
+                it[0].toCharArray().forEach { c ->
+                    if (it[1].indexOf(c) != -1 && it[2].indexOf(c) != -1) {
                         sum += convertCharToPriority(c)
                         return@run
                     }
