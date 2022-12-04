@@ -22,3 +22,8 @@ fun readInputAsInts(name: String) = File("resources", name)
 fun String.md5() = BigInteger(1, MessageDigest.getInstance("MD5").digest(toByteArray()))
     .toString(16)
     .padStart(32, '0')
+
+/**
+ * Splits a string into two parts as a Pair<String, String>
+ */
+fun String.splitAtIndex(index: Int) = take(index) to substring(index)

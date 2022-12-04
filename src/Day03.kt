@@ -45,8 +45,6 @@ fun main() {
     println(part2(input)) // 2639
 }
 
-fun String.splitAtIndex(index: Int) = take(index) to substring(index)
-
 // a: 97 -> 1
 // A: 65 -> 27
 fun convertCharToPriority(input: Char): Int {
