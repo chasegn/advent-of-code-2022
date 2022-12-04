@@ -1,33 +1,10 @@
+import kotlin.system.measureTimeMillis
+
 fun main() {
-    fun part1(input: List<String>): Int {
-        var count = 0;
+    println("overall execution time: " + measureTimeMillis { start() })
+}
 
-        for (assignment in input) {
-            val ranges = makeRanges(assignment)
-
-            if ((ranges.first.contains(ranges.second.first) && ranges.first.contains(ranges.second.last)) ||
-                (ranges.second.contains(ranges.first.first) && ranges.second.contains(ranges.first.last))) {
-                count++
-            }
-        }
-
-        return count
-    }
-
-    fun part2(input: List<String>): Int {
-        var count = 0;
-
-        for (assignment in input) {
-            val ranges = makeRanges(assignment)
-
-            if ((ranges.first.contains(ranges.second.first) || ranges.first.contains(ranges.second.last)) ||
-                (ranges.second.contains(ranges.first.first) || ranges.second.contains(ranges.first.last))) {
-                count++
-            }
-        }
-
-        return count
-    }
+fun start() {
 
     // test if implementation meets criteria from the description, like:
     val testInput = readInput("Day04_Test")
@@ -39,8 +16,38 @@ fun main() {
     check(testResult2 == 4)
 
     val input = readInput("Day04")
-    println(part1(input)) // 644
-    println(part2(input)) // 926
+    println("part 1: " + measureTimeMillis { println(part1(input)) }) // 644
+    println("part 2: " + measureTimeMillis{ println(part2(input)) }) // 926
+}
+
+fun part1(input: List<String>): Int {
+    var count = 0;
+
+    for (assignment in input) {
+        val ranges = makeRanges(assignment)
+
+        if ((ranges.first.contains(ranges.second.first) && ranges.first.contains(ranges.second.last)) ||
+            (ranges.second.contains(ranges.first.first) && ranges.second.contains(ranges.first.last))) {
+            count++
+        }
+    }
+
+    return count
+}
+
+fun part2(input: List<String>): Int {
+    var count = 0;
+
+    for (assignment in input) {
+        val ranges = makeRanges(assignment)
+
+        if ((ranges.first.contains(ranges.second.first) || ranges.first.contains(ranges.second.last)) ||
+            (ranges.second.contains(ranges.first.first) || ranges.second.contains(ranges.first.last))) {
+            count++
+        }
+    }
+
+    return count
 }
 
 fun makeRanges(input: String): Pair<IntRange, IntRange> {
