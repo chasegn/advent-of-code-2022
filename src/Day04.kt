@@ -9,9 +9,11 @@ fun main() {
             val second = pair[1].split('-')
             val left = first[0].toInt()..first[1].toInt()
             val right = second[0].toInt()..second[1].toInt()
+
             if ((left.contains(right.first) && left.contains(right.last)) ||
-                    (right.contains(left.first) && right.contains(left.last)))
+                (right.contains(left.first) && right.contains(left.last))) {
                 count++
+            }
         }
 
         return count
@@ -26,9 +28,11 @@ fun main() {
             val second = pair[1].split('-')
             val left = first[0].toInt()..first[1].toInt()
             val right = second[0].toInt()..second[1].toInt()
+
             if ((left.contains(right.first) || left.contains(right.last)) ||
-                (right.contains(left.first) || right.contains(left.last)))
+                (right.contains(left.first) || right.contains(left.last))) {
                 count++
+            }
         }
 
         return count
