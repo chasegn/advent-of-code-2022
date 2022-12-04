@@ -10,7 +10,13 @@ If you're stuck with Kotlin-specific questions or anything related to this templ
 - [Kotlin Slack][slack]
 - Template [issue tracker][issues]
 
-Galen has finished implementing some nice enterprise-y quality-of-life structures to make Day-solving less boilerplate-y with the additional bonus of timing each step! Per day: copy "DayXX.kt" and replace "XX" with the digit of the day. As data is saved and made available, and each part is implemented, just invoke the entry point in "Harness.kt" for nicely-formatted output.
+Galen has finished implementing some nice enterprise-y quality-of-life structures to make Day-solving less boilerplate-y with the additional bonus of timing each step! 
+
+Per day: 
+1. copy `DayXX.kt` and replace `XX` with the digit of the day
+2. copy provided test data and input data into resources folder in project as `DayXX_Test` and `DayXX`, respectively 
+3. Begin implementing the `part1` function
+4. Invoke the entry point in `Harness.kt` for nicely-formatted output
 
 [^aoc]:
     [Advent of Code][aoc] – An annual event of Christmas-oriented programming challenges started December 2015.
