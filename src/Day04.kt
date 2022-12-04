@@ -1,17 +1,12 @@
-import kotlin.ranges.rangeTo
 fun main() {
     fun part1(input: List<String>): Int {
         var count = 0;
 
         for (assignment in input) {
-            val pair = assignment.split(',')
-            val first = pair[0].split('-')
-            val second = pair[1].split('-')
-            val left = first[0].toInt()..first[1].toInt()
-            val right = second[0].toInt()..second[1].toInt()
+            val ranges = makeRanges(assignment)
 
-            if ((left.contains(right.first) && left.contains(right.last)) ||
-                (right.contains(left.first) && right.contains(left.last))) {
+            if ((ranges.first.contains(ranges.second.first) && ranges.first.contains(ranges.second.last)) ||
+                (ranges.second.contains(ranges.first.first) && ranges.second.contains(ranges.first.last))) {
                 count++
             }
         }
@@ -23,14 +18,10 @@ fun main() {
         var count = 0;
 
         for (assignment in input) {
-            val pair = assignment.split(',')
-            val first = pair[0].split('-')
-            val second = pair[1].split('-')
-            val left = first[0].toInt()..first[1].toInt()
-            val right = second[0].toInt()..second[1].toInt()
+            val ranges = makeRanges(assignment)
 
-            if ((left.contains(right.first) || left.contains(right.last)) ||
-                (right.contains(left.first) || right.contains(left.last))) {
+            if ((ranges.first.contains(ranges.second.first) || ranges.first.contains(ranges.second.last)) ||
+                (ranges.second.contains(ranges.first.first) || ranges.second.contains(ranges.first.last))) {
                 count++
             }
         }
@@ -50,4 +41,14 @@ fun main() {
     val input = readInput("Day04")
     println(part1(input)) // 644
     println(part2(input)) // 926
+}
+
+fun makeRanges(input: String): Pair<IntRange, IntRange> {
+    val pair = input.split(',')
+    val splitPair = Pair(pair[0].split('-'), pair[1].split('-'))
+
+    val left = splitPair.first[0].toInt()..splitPair.first[1].toInt()
+    val right = splitPair.second[0].toInt()..splitPair.second[1].toInt()
+
+    return Pair(left, right)
 }
