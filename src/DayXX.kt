@@ -1,19 +1,13 @@
-fun main() {
-    fun part1(input: List<String>): Int {
+class DayXX : Day {
+    override val inputFileName: String = "DayXX"
+    override val test1Expected: Int = -1
+    override val test2Expected: Int = -1
+
+    override fun part1(input: List<String>): Int {
         return input.size
     }
 
-    fun part2(input: List<String>): Int {
+    override fun part2(input: List<String>): Int {
         return input.size
     }
-
-    // test if implementation meets criteria from the description, like:
-    val testInput = readInput("Day01")
-    val testResult = part1(testInput)
-//    println(testResult)
-    check(testResult == 24000)
-
-    val input = readInput("Day01")
-    println(part1(input))
-    println(part2(input))
 }
