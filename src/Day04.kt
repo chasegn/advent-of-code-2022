@@ -18,8 +18,7 @@ class Day04 : Day {
             val ranges = makeRanges(assignment)
 
             if ((ranges.first.contains(ranges.second.first) && ranges.first.contains(ranges.second.last)) ||
-                (ranges.second.contains(ranges.first.first) && ranges.second.contains(ranges.first.last))
-            ) {
+                (ranges.second.contains(ranges.first.first) && ranges.second.contains(ranges.first.last))) {
                 count++
             }
         }
@@ -37,8 +36,7 @@ class Day04 : Day {
             val ranges = makeRanges(assignment)
 
             if ((ranges.first.contains(ranges.second.first) || ranges.first.contains(ranges.second.last)) ||
-                (ranges.second.contains(ranges.first.first) || ranges.second.contains(ranges.first.last))
-            ) {
+                (ranges.second.contains(ranges.first.first) || ranges.second.contains(ranges.first.last))) {
                 count++
             }
         }
