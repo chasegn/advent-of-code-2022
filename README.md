@@ -1,8 +1,8 @@
 # advent-of-code-2022
 
-Welcome to the Advent of Code[^aoc] Kotlin project created by [chasegn][github] using the [Advent of Code Kotlin Template][template] delivered by JetBrains.
+Welcome to the Advent of Code[^aoc] Kotlin project created by [Galen Chase][github] using the [Advent of Code Kotlin Template][template] delivered by JetBrains.
 
-In this repository, chasegn is about to provide solutions for the puzzles using [Kotlin][kotlin] language.
+In this repository, Galen is about to provide solutions for the puzzles using [Kotlin][kotlin] language.
 
 If you're stuck with Kotlin-specific questions or anything related to this template, check out the following resources:
 
@@ -10,6 +10,7 @@ If you're stuck with Kotlin-specific questions or anything related to this templ
 - [Kotlin Slack][slack]
 - Template [issue tracker][issues]
 
+Galen has finished implementing some nice enterprise-y quality-of-life structures to make Day-solving less boilerplate-y with the additional bonus of timing each step! Per day: copy "DayXX.kt" and replace "XX" with the digit of the day. As data is saved and made available, and each part is implemented, just invoke the entry point in "Harness.kt" for nicely-formatted output.
 
 [^aoc]:
     [Advent of Code][aoc] – An annual event of Christmas-oriented programming challenges started December 2015.
