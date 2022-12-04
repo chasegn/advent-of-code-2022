@@ -9,15 +9,15 @@ fun start() {
     // test if implementation meets criteria from the description, like:
     val testInput = readInput("Day04_Test")
     val testResult = part1(testInput)
-    println(testResult)
+    println("part 1 test result: $testResult")
     check(testResult == 2)
     val testResult2 = part2(testInput)
-    println(testResult2)
+    println("part 2 test result: $testResult2 \n")
     check(testResult2 == 4)
 
     val input = readInput("Day04")
-    println("part 1: " + measureTimeMillis { println(part1(input)) }) // 644
-    println("part 2: " + measureTimeMillis{ println(part2(input)) }) // 926
+    println("part 1 time: " + measureTimeMillis { println("part 1 result: " + part1(input)) } + "\n") // 644
+    println("part 2 time: " + measureTimeMillis { println("part 2 result: " + part2(input)) } + "\n") // 926
 }
 
 fun part1(input: List<String>): Int {
