@@ -10,34 +10,19 @@ fun main() {
          */
         for (attempt in input) {
             val elf = attempt[0].code
-
-//            val you = attempt[2].code - 23
-//            score += if (elf < you || abs(elf - you) == 2) { // win
-//                val result = (6 + (you - 64))
-//                println(result)
-//                result
-//            } else if (elf == you) { // draw
-//                val result = (3 + (you - 64))
-//                println(result)
-//                result
-//            } else { // loss
-//                val result = (you - 64)
-//                println(result)
-//                result
-//            }
-//            println(score)
-
             val you = attempt[2].code - 20
-            score += if (you - elf == 1 || you - elf == 4) {
-                // win
-                (6 + (you - 67))
-            } else if (you - elf == 3) {
-                // draw
-                (3 + (you - 67))
-            } else {
-                // lose
-                (you - 67)
-            }
+
+            score +=
+                (if (you - elf == 1 || you - elf == 4) {
+                    // win
+                    (6 + (you - 67))
+                } else if (you - elf == 3) {
+                    // draw
+                    (3 + (you - 67))
+                } else {
+                    // lose
+                    (you - 67)
+                })
         }
 
         return score
@@ -76,7 +61,6 @@ fun main() {
     println(part1(input)) // 13924
     println(part2(input)) // 13448
 }
-
 
 fun beatElf(input: Char): Char {
     return when (input) {
