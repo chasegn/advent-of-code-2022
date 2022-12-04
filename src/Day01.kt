@@ -1,7 +1,14 @@
 import java.lang.Integer.max
 
-fun main() {
-    fun part1(input: List<String>): Int {
+class Day01 : Day {
+    override val inputFileName: String = "Day01"
+    override val test1Expected: Int = 24000
+    override val test2Expected: Int = 45000
+
+    /**
+     * Accepted solution: 69501
+     */
+    override fun part1(input: List<String>): Int {
         var curSum = 0
         var savedMax = 0
 
@@ -17,7 +24,10 @@ fun main() {
         return savedMax
     }
 
-    fun part2(input: List<String>): Int {
+    /**
+     * Accepted solution: 202346
+     */
+    override fun part2(input: List<String>): Int {
         val list = mutableListOf<Int>()
         var curSum = 0
 
@@ -34,14 +44,4 @@ fun main() {
 
         return list.slice(0..2).sumOf { it }
     }
-
-    // test if implementation meets criteria from the description, like:
-    val testInput = readInput("Day01_Test")
-    val testResult = part1(testInput)
-//    println(testResult)
-    check(testResult == 24000)
-
-    val input = readInput("Day01")
-    println(part1(input)) // 69501
-    println(part2(input)) // 202346
 }

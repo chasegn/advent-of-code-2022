@@ -1,61 +1,53 @@
-import kotlin.system.measureTimeMillis
+class Day04 : Day {
+    override val inputFileName: String = "Day04"
+    override val test1Expected: Int = 2
+    override val test2Expected: Int = 4
 
-fun main() {
-    println("overall execution time: " + measureTimeMillis { start() })
-}
+    /**
+     * Accepted solution: 644
+     */
+    override fun part1(input: List<String>): Int {
+        var count = 0;
 
-fun start() {
+        for (assignment in input) {
+            val ranges = makeRanges(assignment)
 
-    // test if implementation meets criteria from the description, like:
-    val testInput = readInput("Day04_Test")
-    val testResult = part1(testInput)
-    println("part 1 test result: $testResult")
-    check(testResult == 2)
-    val testResult2 = part2(testInput)
-    println("part 2 test result: $testResult2 \n")
-    check(testResult2 == 4)
-
-    val input = readInput("Day04")
-    println("part 1 time: " + measureTimeMillis { println("part 1 result: " + part1(input)) } + "\n") // 644
-    println("part 2 time: " + measureTimeMillis { println("part 2 result: " + part2(input)) } + "\n") // 926
-}
-
-fun part1(input: List<String>): Int {
-    var count = 0;
-
-    for (assignment in input) {
-        val ranges = makeRanges(assignment)
-
-        if ((ranges.first.contains(ranges.second.first) && ranges.first.contains(ranges.second.last)) ||
-            (ranges.second.contains(ranges.first.first) && ranges.second.contains(ranges.first.last))) {
-            count++
+            if ((ranges.first.contains(ranges.second.first) && ranges.first.contains(ranges.second.last)) ||
+                (ranges.second.contains(ranges.first.first) && ranges.second.contains(ranges.first.last))
+            ) {
+                count++
+            }
         }
+
+        return count
     }
 
-    return count
-}
+    /**
+     * Accepted solution: 926
+     */
+    override fun part2(input: List<String>): Int {
+        var count = 0;
 
-fun part2(input: List<String>): Int {
-    var count = 0;
+        for (assignment in input) {
+            val ranges = makeRanges(assignment)
 
-    for (assignment in input) {
-        val ranges = makeRanges(assignment)
-
-        if ((ranges.first.contains(ranges.second.first) || ranges.first.contains(ranges.second.last)) ||
-            (ranges.second.contains(ranges.first.first) || ranges.second.contains(ranges.first.last))) {
-            count++
+            if ((ranges.first.contains(ranges.second.first) || ranges.first.contains(ranges.second.last)) ||
+                (ranges.second.contains(ranges.first.first) || ranges.second.contains(ranges.first.last))
+            ) {
+                count++
+            }
         }
+
+        return count
     }
 
-    return count
-}
+    private fun makeRanges(input: String): Pair<IntRange, IntRange> {
+        val pair = input.split(',')
+        val splitPair = Pair(pair[0].split('-'), pair[1].split('-'))
 
-fun makeRanges(input: String): Pair<IntRange, IntRange> {
-    val pair = input.split(',')
-    val splitPair = Pair(pair[0].split('-'), pair[1].split('-'))
+        val left = splitPair.first[0].toInt()..splitPair.first[1].toInt()
+        val right = splitPair.second[0].toInt()..splitPair.second[1].toInt()
 
-    val left = splitPair.first[0].toInt()..splitPair.first[1].toInt()
-    val right = splitPair.second[0].toInt()..splitPair.second[1].toInt()
-
-    return Pair(left, right)
+        return Pair(left, right)
+    }
 }
