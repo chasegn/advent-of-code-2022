@@ -3,11 +3,11 @@ interface Day {
     val testFileName: String
         get() = inputFileName + "_Test"
 
-    val test1Expected: Int
-    val test2Expected: Int
+    val test1Expected: Any
+    val test2Expected: Any
 
-    fun part1(input: List<String>): Int
-    fun part2(input: List<String>): Int
+    fun part1(input: List<String>): Any
+    fun part2(input: List<String>): Any
 
     fun tests() {
         val testInput = readInput(testFileName)
