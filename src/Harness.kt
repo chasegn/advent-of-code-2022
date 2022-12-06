@@ -2,7 +2,7 @@ import java.time.Duration
 import kotlin.system.measureNanoTime
 
 class Harness {
-    private val day = Day05() // change this to swap out the day
+    private val day = Day06() // change this to swap out the day
 
     fun start() {
         day.tests()
