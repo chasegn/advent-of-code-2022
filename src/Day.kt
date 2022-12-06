@@ -3,8 +3,8 @@ interface Day {
     val testFileName: String
         get() = inputFileName + "_Test"
 
-    val test1Expected: Any
-    val test2Expected: Any
+    val test1Expected: Any?
+    val test2Expected: Any?
 
     fun part1(input: List<String>): Any
     fun part2(input: List<String>): Any
@@ -12,7 +12,7 @@ interface Day {
     fun tests() {
         val testInput = readInput(testFileName)
 
-        if (test1Expected != -1) {
+        if (test1Expected != null) {
             val test1Result = part1(testInput)
             check(test1Result == test1Expected) {
                 """
@@ -23,7 +23,7 @@ interface Day {
             }
         }
 
-        if (test2Expected != -1) {
+        if (test2Expected != null) {
             val test2Result = part2(testInput)
             check(test2Result == test2Expected) {
                 """
