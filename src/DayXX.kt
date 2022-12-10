@@ -5,8 +5,8 @@
  */
 class DayXX : Day {
     override val inputFileName: String = "DayXX"
-    override val test1Expected: Int = -1
-    override val test2Expected: Int = -1
+    override val test1Expected: Int? = null
+    override val test2Expected: Int? = null
 
     /**
      * Accepted solution:
