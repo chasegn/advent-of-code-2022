@@ -51,11 +51,9 @@ class Day10 : Day {
                 tempCycle -= 40
             }
 
-            if (abs(register - tempCycle) == 0 ||
-                abs(register - tempCycle) == 1) {
-                print('#')
-            } else {
-                print('.')
+            when (abs(register-tempCycle)) {
+                0,1 -> print('#')
+                else -> print(' ')
             }
 
             if (cycleCount % 40 == 0) {
